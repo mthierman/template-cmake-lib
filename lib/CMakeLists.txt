@@ -29,6 +29,6 @@ install(
     ${PROJECT_NAME}_headers
     )
 
-install(EXPORT ${PROJECT_NAME}Targets DESTINATION "share/cmake/lib" NAMESPACE ${PROJECT_NAME}::)
+install(EXPORT ${PROJECT_NAME}Targets DESTINATION "share/cmake/lib" NAMESPACE lib2::)
 
 install(FILES "../cmake/libConfig.cmake" DESTINATION "share/cmake/lib")
