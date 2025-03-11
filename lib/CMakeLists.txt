@@ -15,4 +15,4 @@ target_sources(
     PRIVATE "lib.cxx"
     )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_config)
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}::config)
