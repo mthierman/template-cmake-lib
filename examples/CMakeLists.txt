@@ -1,4 +1,4 @@
-add_executable(${PROJECT_NAME}_example)
+add_executable(${PROJECT_NAME}_example EXCLUDE_FROM_ALL)
 
 target_sources(${PROJECT_NAME}_example PRIVATE "example.cxx")
 
@@ -11,7 +11,7 @@ target_link_libraries(
     PRIVATE 
     # ${PROJECT_NAME}::${PROJECT_NAME}
             # ${PROJECT_NAME}::config
-            lib2::lib
-            lib2::config
+            ${PROJECT_NAME}2::lib
+            ${PROJECT_NAME}2::config
             # lib::config
     )

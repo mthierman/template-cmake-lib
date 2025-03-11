@@ -29,6 +29,6 @@ install(
     headers
     )
 
-install(EXPORT ${PROJECT_NAME} DESTINATION "lib" NAMESPACE lib2::)
+install(EXPORT ${PROJECT_NAME} DESTINATION "cmake" NAMESPACE lib2::)
 
-install(FILES "../cmake/lib-config.cmake" DESTINATION "lib")
+install(FILES "../cmake/lib-config.cmake" DESTINATION "cmake")
