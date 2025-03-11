@@ -21,8 +21,6 @@ target_sources(
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}::config)
 
-include(GNUInstallDirs)
-
 # https://stackoverflow.com/a/71066174
 install(
     TARGETS ${PROJECT_NAME}
