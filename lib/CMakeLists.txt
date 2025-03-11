@@ -9,6 +9,8 @@ add_library(
 target_sources(
     ${PROJECT_NAME}
     PUBLIC FILE_SET
+           ${PROJECT_NAME}_headers
+           TYPE
            HEADERS
            BASE_DIRS
            "include"
@@ -16,3 +18,13 @@ target_sources(
     )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}::config)
+
+# https://stackoverflow.com/a/71066174
+install(
+    TARGETS ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}_targets
+    FILE_SET
+    ${PROJECT_NAME}_headers
+    )
+
+install(EXPORT ${PROJECT_NAME}_targets DESTINATION share/cmake/lib NAMESPACE ${PROJECT_NAME}::)
