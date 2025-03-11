@@ -1,7 +1,7 @@
 {
-    "name": "pane",
+    "name": "lib",
     "version": "0.0.0",
-    "description": "C++ library for Windows",
+    "description": "C++ library template",
     "private": true,
     "type": "module",
     "devDependencies": {
