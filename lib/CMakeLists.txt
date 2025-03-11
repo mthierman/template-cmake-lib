@@ -15,13 +15,4 @@ target_sources(
     PRIVATE "lib.cxx"
     )
 
-target_link_libraries(
-    ${PROJECT_NAME}
-    PRIVATE ${PROJECT_NAME}_config
-            icu
-            pane::ada
-            pane::glaze
-            pane::webview2
-            pane::wil
-            pane::cppwinrt
-    )
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_config)
