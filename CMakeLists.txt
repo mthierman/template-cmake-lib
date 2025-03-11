@@ -14,5 +14,5 @@ add_subdirectory("config")
 add_subdirectory("lib")
 
 if(PROJECT_IS_TOP_LEVEL)
-    add_subdirectory("lib_usage")
+    add_subdirectory("examples")
 endif()
