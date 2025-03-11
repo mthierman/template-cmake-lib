@@ -42,3 +42,5 @@ target_link_options(
     INTERFACE
     /WX
     )
+
+install(TARGETS ${PROJECT_NAME}_config EXPORT ${PROJECT_NAME}Targets)

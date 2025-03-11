@@ -14,17 +14,21 @@ target_sources(
            HEADERS
            BASE_DIRS
            "include"
+           FILES
+           "include/lib/lib.hxx"
     PRIVATE "lib.cxx"
     )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}::config)
 
 # https://stackoverflow.com/a/71066174
-# install(
-#     TARGETS ${PROJECT_NAME}
-#     EXPORT ${PROJECT_NAME}_targets
-#     FILE_SET
-#     ${PROJECT_NAME}_headers
-#     )
+install(
+    TARGETS ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}Targets
+    FILE_SET
+    ${PROJECT_NAME}_headers
+    )
 
-# install(EXPORT ${PROJECT_NAME}_targets DESTINATION share/cmake/lib NAMESPACE ${PROJECT_NAME}::)
+install(EXPORT ${PROJECT_NAME}Targets DESTINATION "share/cmake/lib" NAMESPACE ${PROJECT_NAME}::)
+
+install(FILES "../cmake/libConfig.cmake" DESTINATION "share/cmake/lib")
