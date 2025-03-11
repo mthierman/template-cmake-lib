@@ -9,7 +9,7 @@ add_library(
 target_sources(
     ${PROJECT_NAME}
     PUBLIC FILE_SET
-           ${PROJECT_NAME}_headers
+           headers
            TYPE
            HEADERS
            BASE_DIRS
@@ -21,14 +21,16 @@ target_sources(
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}::config)
 
+include(GNUInstallDirs)
+
 # https://stackoverflow.com/a/71066174
 install(
     TARGETS ${PROJECT_NAME}
-    EXPORT ${PROJECT_NAME}Targets
+    EXPORT ${PROJECT_NAME}
     FILE_SET
-    ${PROJECT_NAME}_headers
+    headers
     )
 
-install(EXPORT ${PROJECT_NAME}Targets DESTINATION "share/cmake/lib" NAMESPACE lib2::)
+install(EXPORT ${PROJECT_NAME} DESTINATION "cps" NAMESPACE lib2::)
 
-install(FILES "../cmake/libConfig.cmake" DESTINATION "share/cmake/lib")
+install(FILES "../cmake/lib-config.cmake" DESTINATION "cps")

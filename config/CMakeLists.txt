@@ -43,4 +43,4 @@ target_link_options(
     /WX
     )
 
-install(TARGETS config EXPORT ${PROJECT_NAME}Targets)
+install(TARGETS config EXPORT ${PROJECT_NAME})
