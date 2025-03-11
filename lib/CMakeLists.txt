@@ -24,11 +24,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}::config)
 # https://stackoverflow.com/a/71066174
 install(
     TARGETS ${PROJECT_NAME}
-    EXPORT ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}-targets
     FILE_SET
     headers
     )
 
-install(EXPORT ${PROJECT_NAME} DESTINATION "cmake" NAMESPACE lib::)
+install(EXPORT ${PROJECT_NAME}-targets DESTINATION "cmake" NAMESPACE lib::)
 
 install(FILES "../cmake/lib-config.cmake" DESTINATION "cmake")
