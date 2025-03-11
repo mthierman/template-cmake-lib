@@ -1,3 +1,0 @@
-add_custom_target(
-    ${PROJECT_NAME}_help WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ${CMAKE_COMMAND} -E help
-    )

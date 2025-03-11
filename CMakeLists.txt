@@ -8,7 +8,7 @@ list(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
     )
 
-include("help")
+include("true")
 
 add_subdirectory("config")
 add_subdirectory("lib")
