@@ -1,10 +1,5 @@
 cmake_minimum_required(VERSION 4.3)
-project(
-    lib
-    VERSION 0.0.0
-    DESCRIPTION "C++ library template"
-    LANGUAGES CXX
-)
+project(lib VERSION 0.0.0 DESCRIPTION "C++ library template" LANGUAGES CXX)
 
 include(GNUInstallDirs)
 
@@ -48,9 +43,7 @@ target_link_options(
 )
 target_sources(
     ${PROJECT_NAME}
-    PUBLIC
-        FILE_SET headers TYPE HEADERS BASE_DIRS "include" FILES
-        "include/lib/lib.hpp"
+    PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS "include" FILES "include/lib/lib.hpp"
     PRIVATE "src/lib.cxx"
 )
 
