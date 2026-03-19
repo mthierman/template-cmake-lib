@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.3)
-project(lib)
+project(lib VERSION 0.0.0 DESCRIPTION "C++ library template")
 
 include(GNUInstallDirs)
 
