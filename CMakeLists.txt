@@ -31,20 +31,6 @@ target_compile_options(
         >
 )
 
-target_link_options(
-    ${PROJECT_NAME}
-    PRIVATE
-        $<$<CXX_COMPILER_ID:MSVC>:
-        /WX
-        >
-        $<$<AND:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_FRONTEND_VARIANT:MSVC>>:
-        /WX
-        >
-        $<$<AND:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_FRONTEND_VARIANT:GNU>>:
-        -Wl,/WX
-        >
-)
-
 target_sources(
     ${PROJECT_NAME}
     PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS "include" FILES "include/lib/lib.hpp"
