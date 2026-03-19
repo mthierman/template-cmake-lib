@@ -38,17 +38,15 @@ target_link_options(
         -Wl,/WX
         >
 )
-# install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}-targets)
 
 target_sources(
     ${PROJECT_NAME}
     PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS "include"
     PRIVATE "src/lib.cxx"
 )
-# install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}-targets FILE_SET headers)
-# install(EXPORT ${PROJECT_NAME}-targets DESTINATION "cmake" NAMESPACE ${PROJECT_NAME}::)
-# install(FILES "../cmake/lib-config.cmake" DESTINATION "cmake")
 
 if(PROJECT_IS_TOP_LEVEL)
-    add_subdirectory(examples)
+    add_executable(${PROJECT_NAME}_example)
+    target_sources(${PROJECT_NAME}_example PRIVATE "example.cxx")
+    target_link_libraries(${PROJECT_NAME}_example PRIVATE ${PROJECT_NAME})
 endif()
