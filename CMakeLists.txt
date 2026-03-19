@@ -1,15 +1,23 @@
-cmake_minimum_required(VERSION 4.2)
-project(lib)
+cmake_minimum_required(VERSION 4.3)
+project(
+    lib
+    VERSION 0.0.0
+    DESCRIPTION "C++ library template"
+    LANGUAGES CXX
+)
+
+include(GNUInstallDirs)
+
 add_library(${PROJECT_NAME})
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
-target_compile_features(${PROJECT_NAME} PUBLIC c_std_17 cxx_std_23)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_23)
 target_compile_definitions(
     ${PROJECT_NAME}
-    PUBLIC UNICODE WIN32_LEAN_AND_MEAN NOMINMAX GDIPVER=0x0110
+    PRIVATE UNICODE WIN32_LEAN_AND_MEAN NOMINMAX GDIPVER=0x0110
 )
 target_compile_options(
     ${PROJECT_NAME}
-    PUBLIC
+    PRIVATE
         $<$<CXX_COMPILER_ID:MSVC>:
         /W4
         /utf-8
@@ -27,7 +35,7 @@ target_compile_options(
 )
 target_link_options(
     ${PROJECT_NAME}
-    PUBLIC
+    PRIVATE
         $<$<CXX_COMPILER_ID:MSVC>:
         /WX
         >
@@ -40,8 +48,25 @@ target_link_options(
 )
 target_sources(
     ${PROJECT_NAME}
-    PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS "include"
+    PUBLIC
+        FILE_SET headers TYPE HEADERS BASE_DIRS "include" FILES
+        "include/lib/lib.hpp"
     PRIVATE "src/lib.cxx"
+)
+
+install(
+    TARGETS ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}
+    FILE_SET headers DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+)
+
+install(
+    PACKAGE_INFO ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cps"
+    VERSION "${PROJECT_VERSION}"
+    DESCRIPTION "${PROJECT_DESCRIPTION}"
+    DEFAULT_TARGETS ${PROJECT_NAME}
 )
 
 if(PROJECT_IS_TOP_LEVEL)
