@@ -1,15 +1,17 @@
 cmake_minimum_required(VERSION 4.3)
 project(lib VERSION 0.0.0 DESCRIPTION "C++ library template")
-
 include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME})
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_23)
+
 target_compile_definitions(
     ${PROJECT_NAME}
     PRIVATE UNICODE WIN32_LEAN_AND_MEAN NOMINMAX GDIPVER=0x0110
 )
+
 target_compile_options(
     ${PROJECT_NAME}
     PRIVATE
@@ -28,6 +30,7 @@ target_compile_options(
         -Wall
         >
 )
+
 target_link_options(
     ${PROJECT_NAME}
     PRIVATE
@@ -41,6 +44,7 @@ target_link_options(
         -Wl,/WX
         >
 )
+
 target_sources(
     ${PROJECT_NAME}
     PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS "include" FILES "include/lib/lib.hpp"
