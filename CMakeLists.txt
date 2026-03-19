@@ -47,6 +47,6 @@ target_sources(
 
 if(PROJECT_IS_TOP_LEVEL)
     add_executable(${PROJECT_NAME}_example)
-    target_sources(${PROJECT_NAME}_example PRIVATE "example.cxx")
+    target_sources(${PROJECT_NAME}_example PRIVATE "src/example.cxx")
     target_link_libraries(${PROJECT_NAME}_example PRIVATE ${PROJECT_NAME})
 endif()
