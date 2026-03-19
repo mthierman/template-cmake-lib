@@ -38,7 +38,6 @@ target_link_options(
         -Wl,/WX
         >
 )
-
 target_sources(
     ${PROJECT_NAME}
     PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS "include"
