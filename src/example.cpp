@@ -1,9 +1,8 @@
-#include <cstdlib>
 #include <lib/lib.hpp>
 #include <print>
 
 auto wmain([[maybe_unused]] int argc, [[maybe_unused]] wchar_t** argv) -> int {
     std::println("{}", lib::thirteen());
 
-    return EXIT_SUCCESS;
+    return 0;
 }

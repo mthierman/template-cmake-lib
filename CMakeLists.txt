@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.3)
 
-project(library VERSION 0.0.0)
+project(log VERSION 0.0.0)
 
 include(GNUInstallDirs)
 

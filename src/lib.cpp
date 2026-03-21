@@ -1,5 +1,6 @@
 #include <lib/lib.hpp>
+#include <print>
 
 namespace lib {
-auto thirteen() -> int { return 13; }
+auto log(std::string_view message) -> void { std::println(message); }
 } // namespace lib
