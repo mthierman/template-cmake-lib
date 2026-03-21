@@ -5,7 +5,7 @@ project(log VERSION 0.0.0)
 include(GNUInstallDirs)
 
 add_library(log)
-add_library(log::log ALIAS log)
+add_library(utils::log ALIAS log)
 
 target_compile_features(log PUBLIC cxx_std_23)
 
@@ -50,7 +50,7 @@ if(PROJECT_IS_TOP_LEVEL)
 
     target_sources(log_example PRIVATE "src/example.cpp" "data/app.rc" "data/app.manifest")
 
-    target_link_libraries(log_example PRIVATE log::log)
+    target_link_libraries(log_example PRIVATE utils::log)
 
     target_compile_options(
         log_example
