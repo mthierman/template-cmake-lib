@@ -1,8 +1,8 @@
-#include <log/log.hpp>
+#include <utils/log.hpp>
 
 auto main() -> int
 {
-    log::log("Hello, world!");
+    utils::log("Hello, world!");
 
     return 0;
 }

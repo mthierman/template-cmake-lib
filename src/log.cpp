@@ -1,5 +1,5 @@
-#include <log/log.hpp>
+#include <utils/log.hpp>
 
-namespace log {
+namespace utils {
 auto log(std::string_view message) -> void { std::println("{}", message); }
-} // namespace log
+} // namespace utils
