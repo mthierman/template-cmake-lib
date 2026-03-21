@@ -1,5 +1,5 @@
-#include <lib/lib.hpp>
+#include <mthierman/log.hpp>
 
-namespace lib {
+namespace mthierman {
 auto log(std::string_view message) -> void { std::println("{}", message); }
-} // namespace lib
+} // namespace mthierman

@@ -35,8 +35,8 @@ target_compile_options(
 
 target_sources(
     ${PROJECT_NAME}
-    PUBLIC FILE_SET HEADERS TYPE HEADERS BASE_DIRS "include" FILES "include/lib/lib.hpp"
-    PRIVATE "src/lib.cpp"
+    PUBLIC FILE_SET HEADERS TYPE HEADERS BASE_DIRS "include" FILES "include/mthierman/log.hpp"
+    PRIVATE "src/log.cpp"
 )
 
 install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} FILE_SET HEADERS)

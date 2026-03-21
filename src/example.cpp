@@ -1,8 +1,8 @@
-#include <lib/lib.hpp>
+#include <mthierman/log.hpp>
 
 auto main() -> int
 {
-    lib::log("Hello, world!");
+    mthierman::log("Hello, world!");
 
     return 0;
 }
