@@ -2,7 +2,7 @@
 
 auto main() -> int
 {
-    mthierman::log("Hello, world!");
+    log::log("Hello, world!");
 
     return 0;
 }

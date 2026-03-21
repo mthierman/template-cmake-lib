@@ -1,5 +1,5 @@
 #include <log/log.hpp>
 
-namespace mthierman {
+namespace log {
 auto log(std::string_view message) -> void { std::println("{}", message); }
-} // namespace mthierman
+} // namespace log
