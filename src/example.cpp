@@ -1,8 +1,8 @@
 #include <lib/lib.hpp>
-#include <print>
 
-auto wmain([[maybe_unused]] int argc, [[maybe_unused]] wchar_t** argv) -> int {
-    std::println("{}", lib::thirteen());
+auto main() -> int
+{
+    lib::log("Hello, world!");
 
     return 0;
 }

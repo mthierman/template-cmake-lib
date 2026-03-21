@@ -1,5 +1,6 @@
 #pragma once
 #include <format>
+#include <print>
 #include <string_view>
 
 namespace lib {

@@ -2,5 +2,5 @@
 #include <print>
 
 namespace lib {
-auto log(std::string_view message) -> void { std::println(message); }
+auto log(std::string_view message) -> void { std::println("{}", message); }
 } // namespace lib
