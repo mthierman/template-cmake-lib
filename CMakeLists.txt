@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 4.3)
-project(lib VERSION 0.0.0 DESCRIPTION "C++ library template")
+
+project(library VERSION 0.0.0)
+
 include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME})
@@ -33,27 +35,16 @@ target_compile_options(
 
 target_sources(
     ${PROJECT_NAME}
-    PUBLIC FILE_SET headers TYPE HEADERS BASE_DIRS "include" FILES "include/lib/lib.hpp"
-    PRIVATE "src/lib.cxx"
+    PUBLIC FILE_SET HEADERS TYPE HEADERS BASE_DIRS "include" FILES "include/lib/lib.hpp"
+    PRIVATE "src/lib.cpp"
 )
 
-install(
-    TARGETS ${PROJECT_NAME}
-    EXPORT ${PROJECT_NAME}
-    FILE_SET headers DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
-)
-
-install(
-    PACKAGE_INFO ${PROJECT_NAME}
-    EXPORT ${PROJECT_NAME}
-    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cps"
-    VERSION "${PROJECT_VERSION}"
-    DESCRIPTION "${PROJECT_DESCRIPTION}"
-    DEFAULT_TARGETS ${PROJECT_NAME}
-)
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} FILE_SET HEADERS)
+install(PACKAGE_INFO ${PROJECT_NAME} EXPORT ${PROJECT_NAME} VERSION "${PROJECT_VERSION}")
+export(PACKAGE_INFO ${PROJECT_NAME} EXPORT ${PROJECT_NAME} VERSION "${PROJECT_VERSION}")
 
 if(PROJECT_IS_TOP_LEVEL)
     add_executable(${PROJECT_NAME}_example)
-    target_sources(${PROJECT_NAME}_example PRIVATE "src/example.cxx")
+    target_sources(${PROJECT_NAME}_example PRIVATE "src/example.cpp")
     target_link_libraries(${PROJECT_NAME}_example PRIVATE ${PROJECT_NAME})
 endif()
