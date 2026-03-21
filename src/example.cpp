@@ -1,4 +1,4 @@
-#include <mthierman/log.hpp>
+#include <log/log.hpp>
 
 auto main() -> int
 {

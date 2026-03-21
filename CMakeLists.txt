@@ -35,7 +35,7 @@ target_compile_options(
 
 target_sources(
     log
-    PUBLIC FILE_SET HEADERS TYPE HEADERS BASE_DIRS "include" FILES "include/mthierman/log.hpp"
+    PUBLIC FILE_SET HEADERS TYPE HEADERS BASE_DIRS "include" FILES "include/log/log.hpp"
     PRIVATE "src/log.cpp"
 )
 
